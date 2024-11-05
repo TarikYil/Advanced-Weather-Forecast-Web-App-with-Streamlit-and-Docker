@@ -43,7 +43,7 @@ Bu proje, kullanıcıların şehir, sıcaklık birimi ve tarih aralığı seçer
 - **Tahmini Göster**: Ayarlar yapıldıktan sonra "Tahmini Göster" butonuna basarak hava durumu tahminlerini görüntüleyin.
 - **Hava Durumu Özeti**: Seçilen tarih aralığına göre sıcaklık özetlerini ve günlük sıcaklık değişim grafiğini inceleyin.
 
-### Proje Yapısı
+## Proje Yapısı
 
 project-root/
 ├── backend/
@@ -56,6 +56,7 @@ project-root/
 │   └── requirements.txt         # UI bağımlılıkları
 ├── .env                         # Ortak yapılandırma ayarlarını içeren dosya
 └── docker-compose.yml           # Tüm servisleri başlatmak için Docker Compose dosyası
+
 
 
 .env dosyasını oluşturun ve yapılandırın:
