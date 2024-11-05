@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres_project
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - mynetwork
+
+  fastapi-backend:
+    container_name: fastapi_project
+    build: ./backend
+    ports:
+      - "${FASTAPI_PORT}:8001"
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:${POSTGRES_PORT}/${POSTGRES_DB}
+    depends_on:
+      - postgres
+    networks:
+      - mynetwork
+
+  streamlit-ui:
+    container_name: streamlit_project
+    build: ./ui
+    ports:
+      - "${STREAMLIT_PORT}:8507"
+    volumes:
+      - ./ui:/app
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - fastapi-backend
+    networks:
+      - mynetwork
+
+volumes:
+  postgres_data:
+
+networks:
+  mynetwork:
+    driver: bridge
