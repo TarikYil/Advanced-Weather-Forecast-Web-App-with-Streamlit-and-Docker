@@ -44,18 +44,18 @@ Bu proje, kullanıcıların şehir, sıcaklık birimi ve tarih aralığı seçer
 - **Hava Durumu Özeti**: Seçilen tarih aralığına göre sıcaklık özetlerini ve günlük sıcaklık değişim grafiğini inceleyin.
 
 ## Proje Yapısı
-```plaintext
-project-root/
-├── backend/
-│   ├── Dockerfile               # FastAPI uygulaması için Docker yapılandırma dosyası
-│   ├── main.py                  # Hava durumu verilerini sağlayan FastAPI uygulama dosyası
-│   └── requirements.txt         # Backend bağımlılıkları
-├── ui/
-│   ├── Dockerfile               # Streamlit uygulaması için Docker yapılandırma dosyası
-│   ├── app.py                   # Kullanıcı arayüzü ana dosyası
-│   └── requirements.txt         # UI bağımlılıkları
-├── .env                         # Ortak yapılandırma ayarlarını içeren dosya
-└── docker-compose.yml           # Tüm servisleri başlatmak için Docker Compose dosyası
+   ```plaintext
+   project-root/
+   ├── backend/
+   │   ├── Dockerfile               # FastAPI uygulaması için Docker yapılandırma dosyası
+   │   ├── main.py                  # Hava durumu verilerini sağlayan FastAPI uygulama dosyası
+   │   └── requirements.txt         # Backend bağımlılıkları
+   ├── ui/
+   │   ├── Dockerfile               # Streamlit uygulaması için Docker yapılandırma dosyası
+   │   ├── app.py                   # Kullanıcı arayüzü ana dosyası
+   │   └── requirements.txt         # UI bağımlılıkları
+   ├── .env                         # Ortak yapılandırma ayarlarını içeren dosya
+   └── docker-compose.yml           # Tüm servisleri başlatmak için Docker Compose dosyası
 
 
 
