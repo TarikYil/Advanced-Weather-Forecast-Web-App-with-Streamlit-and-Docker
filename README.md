@@ -44,7 +44,7 @@ Bu proje, kullanıcıların şehir, sıcaklık birimi ve tarih aralığı seçer
 - **Hava Durumu Özeti**: Seçilen tarih aralığına göre sıcaklık özetlerini ve günlük sıcaklık değişim grafiğini inceleyin.
 
 ## Proje Yapısı
-
+```plaintext
 project-root/
 ├── backend/
 │   ├── Dockerfile               # FastAPI uygulaması için Docker yapılandırma dosyası
@@ -59,4 +59,4 @@ project-root/
 
 
 
-.env dosyasını oluşturun ve yapılandırın:
+.env dosyasını oluşturun ve yapılandırın.
